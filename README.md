@@ -12,9 +12,33 @@ It automatically organizes files in a folder based on type and date.
 - Interactive web interface with Streamlit
 
 ## How to Run
-1. Install dependencies:
-   pip install streamlit
-2. Run the app:
-   streamlit run app.py
-3. Enter folder path and click "Sort Files"
-4. See files sorted and logs displayed
+
+Windows (PowerShell)
+
+1. Activate the project's virtual environment (if you created one):
+
+```powershell
+& .\venv\Scripts\Activate.ps1
+```
+
+2. Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+3. Start the Streamlit app (this launches a browser UI):
+
+```powershell
+streamlit run app.py
+```
+
+You can also use the included helper script:
+
+```powershell
+.\run_app.ps1
+```
+
+Notes
+- Don't run the app with `python app.py` — Streamlit must run the script with its runner. Running with plain Python produces warnings like `missing ScriptRunContext` and session state won't work. Use `streamlit run app.py` instead.
+- Logs of moved files are written to `logs/file_log.txt`.
